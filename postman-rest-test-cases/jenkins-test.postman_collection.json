@@ -1,0 +1,50 @@
+{
+	"info": {
+		"_postman_id": "c429437c-07df-4a7a-9fe6-ba1fcbab44ce",
+		"name": "jenkins-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost/test_freestyle/abc.html",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "48b757a4-2c85-4677-b88c-21ff96a058d0",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"good 1\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost/test_freestyle/abc.html",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"test_freestyle",
+						"abc.html"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
